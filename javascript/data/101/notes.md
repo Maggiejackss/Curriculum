@@ -22,4 +22,3 @@ let name = 'Paul';
 ```
 const name = 'Paul';
 ```
-
