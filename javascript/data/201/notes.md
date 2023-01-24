@@ -42,3 +42,11 @@ const cars = [
 
 
 ```
+Javascript considers arrays to be objects. So the shopping list above looks like this in JS.
+```
+const shoppingList= {
+  0: 'apples',
+  1: 'celery',
+  2: 'bread'
+}
+```
