@@ -1,0 +1,17 @@
+.name {
+font-weight: bold;
+color: blue;
+}
+
+.odd{
+background-color: #ddd;
+}
+
+.cost{
+color: red;
+}
+
+.expenseType{
+color: brown;
+}
+
