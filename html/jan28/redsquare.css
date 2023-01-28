@@ -11,7 +11,7 @@ list-style-type: none;
 }
 html{
     width: 375px;
-    align-content: center;
+    margin: auto;
 }
 h1{
    color: #4D4D4D;
@@ -38,11 +38,12 @@ footer{
 .navkey{
     color: #FDFDFD;
     font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-    font-size: 24px;display: inline-block;
-    margin: 15px;
+    font-weight: 300;
+    font-size: 24px;
+    display: inline-block;
+    margin: 10px;
     position: relative;
-    top: 7px;
+    top: 12px;
     
 }
 li{
@@ -71,7 +72,7 @@ li{
     width: 20px;
     position: absolute;
     top: 35px;
-    left: 25px;
+    left: 150px;
 }
 .liBP{
     background-color: #9B9A9A;
