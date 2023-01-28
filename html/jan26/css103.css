@@ -1,0 +1,47 @@
+.ul {
+    list-style-type: none;
+  }
+  
+  li {
+    color: rgba(20, 20, 20, 0.4);
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 3rem;
+    padding: 20px 60px;
+  }
+  
+  .bg1 {
+    background-color: cornsilk;
+  }
+  
+  .bg2 {
+    background-color: cornflowerblue;
+  }
+  
+  .bg3 {
+    background-color: powderblue;
+  }
+  
+  .bg4 {
+    background-color: pink;
+  }
+  
+  .bg5 {
+    background-color: linen;
+  }
+  
+  .bg6 {
+    background-color: gainsboro;
+  }
+  
+  .bg7 {
+    background-color: lavender;
+  }
+  
+  .bg8 {
+    background-color: cadetblue;
+  }
+  
+  .bg9 {
+    background-color: papayawhip;
+  }
