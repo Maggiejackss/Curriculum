@@ -13,6 +13,3 @@
 |JS|9|
 |Alias|9|
 |Alias|9|
-|Months|10|
-|Students|10|
-|Finances|10|
