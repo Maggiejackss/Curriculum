@@ -4,17 +4,17 @@
 
 **image**
 ```
-<img>
+<img src="...">
 ```
 
 **scripts**
 ```
-<script>
+<script src="...">
 ```
 
 **stylesheets**
 ```
-<link>
+<link href="...">
 ```
 
 Use the network tab and dev tools to see network requests.
