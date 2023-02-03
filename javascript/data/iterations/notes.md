@@ -31,9 +31,8 @@ The statement has three parts- _begin_, _condition_ and _next_. After _begin_, w
 for (let i = 1; i < 10; i++) {
     console.log(i);
 }
-```
 
-```javascript
+
 for (let i = 1; i < 10; i++) {
     // print multiples of 3 only
     if ( i % 3 != 0) continue
@@ -77,3 +76,11 @@ i++;
 // will output final value twice when met
 ```
 
+**for...of**
+Iterates by value. This is a more succinct alternative to the **for** statement explained above.
+```javascript
+const items = ['apples', 'rice', 'soup'];
+for (const item of items) {
+    console.log(item);
+}
+```
