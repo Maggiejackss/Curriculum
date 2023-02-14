@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    border: 2px solid #00a4e6;
+    gap: 2rem;
+}
+
+.container > * {
+    display: flex;
+    border: 2px solid #ff822f;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.blue {
+    display: flex;
+    height: 10px;
+    width: 10px;
+    background-color: #00a4e6;
+    align-self: center;
+}
+
+.orange {
+    display: flex;
+    height: 10px;
+    width: 10px;
+    background-color: #ff822f;
+    align-self: center;
+}

@@ -1,0 +1,13 @@
+body {
+    display: flexbox;
+    background-color: #6c6461;
+    height: 470px;
+    width: 960px;
+}
+.FlexMain {
+    display: flexbox;
+    background-color: #72d5b4;
+    font-family: sans-serif;
+    flex-flow: column wrap;
+
+}
