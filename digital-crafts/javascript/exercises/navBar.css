@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    background-color: cornflowerblue;
+    padding: 19px;
+    margin: auto;
+  }
+  
+  a {
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  a:nth-child(1) {
+    flex-grow: 3;
+  }
+  
+  

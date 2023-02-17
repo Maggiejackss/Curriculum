@@ -1,13 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
 body {
-    display: flexbox;
     background-color: #6c6461;
-    height: 470px;
-    width: 960px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
 }
 .FlexMain {
-    display: flexbox;
-    background-color: #72d5b4;
+    display: flex;
     font-family: sans-serif;
-    flex-flow: column wrap;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
 
+.bg {
+    background-color: #72d5b4;
+    border: 3px solid crimson;
+}
+
+.container-1 {
+    display: flex;
+    column-gap: 5px;
+    flex-wrap: no-wrap;
+    row-gap: 5px;
+    width: 50%;
+
+}
+
+.container-2 {
+    display: flex;
+    row-gap: 5px;
+    column-gap: 5px;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.container-3 {
+    display: flex;
+    column-gap: 5px;
+    flex-grow: 1;
+
+}
+
+.flex2, .flex5 {
+    padding: 20px 0;
+    
+}
+
+.flex3, .flex4 {
+    padding: 20px 0;
+    flex-grow: 1;
 }
