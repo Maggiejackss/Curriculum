@@ -5,21 +5,14 @@ body {
 
 .cont1 {
     display: flex;
-}
-
-.answerW {
-    color: red;
-}
-
-.answerR {
-    color: green;
+    align-items: center;
 }
 
 .mc {
     cursor: pointer;
 }
 
-ol{
+ul{
     display: flex;
     flex-direction: column;
 }

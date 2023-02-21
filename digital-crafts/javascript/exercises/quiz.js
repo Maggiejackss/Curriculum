@@ -1,14 +1,22 @@
 const quiz = document.getElementById("app");
-const answer = document.getElementById("answer");
-const right = document.getElementById("right");
-const wrong = document.getElementById("wrong");
-const answ = document.getElementById("answ")
-
-
+const answer = document.querySelectorAll("[data-answer]")
+const answlist = document.getElementById("answlist");
+const output = document.getElementById("answer")
 const answclick = e => {
-    const a = answer.innerText;
-    if (right) {
-        answer.innerText = 'CORRECT!';
+    if (e.target.matches("[data-answer]")) {
+        console.log(e.target.dataset.answer);
+        let styles = "";
+        if (e.target.dataset.answer === "true"){
+            styles =  "color: green";
+            document.getElementById("answer").innerText = "CORRECT!";
+            output.setAttribute("style", styles);
+        } else {
+            styles = "color: red";
+            document.getElementById("answer").innerText = "WRONG!";
+            output.setAttribute("style", styles);
+        }
     }
 }
-answ.addEventListener('click', answclick);
+
+document.addEventListener('click', answclick);
+
