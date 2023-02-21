@@ -1,0 +1,28 @@
+h1, h2 {
+    font-family: Lato;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  li {
+    border: 1px solid crimson;
+    padding: 20px;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .app{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .text{
+    display: flex;
+    justify-content: center;
+  }

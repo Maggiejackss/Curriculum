@@ -4,7 +4,6 @@
 }
 
 html, body {
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +12,7 @@ html, body {
 
 footer {
     /* flex-shrink: 0; */
+    display: flex;
     background-color: #666;
 }
 
@@ -26,5 +26,6 @@ main {
 }
 
 header {
+    display: flex;
     background-color: #666;
 }

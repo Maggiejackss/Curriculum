@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cont1 {
+    display: flex;
+}
+
+.answerW {
+    color: red;
+}
+
+.answerR {
+    color: green;
+}
+
+.mc {
+    cursor: pointer;
+}
+
+ol{
+    display: flex;
+    flex-direction: column;
+}
