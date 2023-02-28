@@ -4,7 +4,7 @@ const answlist = document.getElementById("answlist");
 const output = document.getElementById("answer")
 const answclick = e => {
     if (e.target.matches("[data-answer]")) {
-        console.log(e.target.dataset.answer);
+        // console.log(e.target.dataset.answer);
         let styles = "";
         if (e.target.dataset.answer === "true"){
             styles =  "color: green";

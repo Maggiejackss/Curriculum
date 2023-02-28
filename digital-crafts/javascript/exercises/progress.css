@@ -1,0 +1,29 @@
+.cont1{
+    display: flex;
+    align-items: center;
+}
+
+.blockline {
+    column-gap: 20px;
+    /* background-color: red; */
+    display: flex;
+    /* border: 10px solid crimson; */
+}
+
+.blocks {
+    display: flex;
+    column-gap: 10px;
+}
+
+.block {
+    background-color: blue;
+    border: 5px solid blue;
+    flex: 1;
+}
+
+
+.blocksRed {
+    background-color: red;
+    border: 5px solid red;
+    flex: 1;
+}
