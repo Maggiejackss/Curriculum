@@ -4,9 +4,18 @@ const dealerHand = document.getElementById("dealer-hand");
 const dealButn = document.getElementById("deal-button");
 const hitButn = document.getElementById("hit-button");
 const standButn = document.getElementById("stand-button");
+const message = document.getElementById("messages");
 const deck = buildDeck();
-console.log(deck);
+// let dealerTotalHand = 0;
+// let playerTotalHand = 0;
+let dealerTotal = 0;
+let playerTotal = 0;
+let dealerhand = [];
+let playerhand = [];
+
 function deal () {
+    let _dealerTotal = 0;
+    let _playerTotal = 0;
     for (let i = 1; i <= 2; i++) {
         const card = document.createElement("img");
         const card2 = document.createElement("img");
@@ -15,28 +24,79 @@ function deal () {
         card.src = `./images/${_card.rank}_of_${_card.suit}.png`;
         card2.src = `./images/${_card2.rank}_of_${_card2.suit}.png`;
         dealerHand.append(card);
-        playerHand.append(card2); 
+        playerHand.append(card2);
+        function getValue2() {
+            let _pointValue = _card2.pointValue;
+            if (isNaN(_pointValue)) {
+                if(_pointValue == "ace"){
+                return 11;
+                }
+            return 10;
+            }
+            return parseInt(_pointValue);
+        }
+        _playerTotal += getValue2(_card2);
+        function getValue() {
+            let _pointValue = _card.pointValue;
+            if (isNaN(_pointValue)) {
+                if(_pointValue == "ace"){
+                    return 11;
+                }
+                return 10;
+            }
+            return parseInt(_pointValue);
+        }
+        _dealerTotal += getValue(_card);
+        
     }
+    dealerTotal += _dealerTotal;
+    playerTotal += _playerTotal;
+    console.log(dealerTotal);
+    console.log(playerTotal);
 }
+
 function hit () {
+    let _dealerTotal = dealerTotal;
+    let _playerTotal = playerTotal;
     for (let i = 1; i <= 1; i++) {
         const card = document.createElement("img");
         const card2 = document.createElement("img");
         const _card = deck.pop();
         const _card2 = deck.pop();
-        playerHand.array.forEach(pointValue => {
-            playerTotalHand += pointValue
-        });
-        dealerHand.array.forEach(pointValue => {
-            dealerTotalHand += pointValue
-        });
         card.src = `./images/${_card.rank}_of_${_card.suit}.png`;
         card2.src = `./images/${_card2.rank}_of_${_card2.suit}.png`;
         dealerHand.append(card);
         playerHand.append(card2);
+        _playerTotal += getValue2(_card2);
+        _dealerTotal += getValue(_card);
+        function getValue2() {
+            let _pointValue = _card2.pointValue;
+            if (isNaN(_pointValue)) {
+                if(_pointValue == "ace"){
+                return 11;
+                }
+            return 10;
+            }
+            return parseInt(_pointValue);
+        }
+        _playerTotal += getValue2(_card2);
+        function getValue() {
+            let _pointValue = _card.pointValue;
+            if (isNaN(_pointValue)) {
+                if(_pointValue == "ace"){
+                    return 11;
+                }
+                return 10;
+            }
+            return parseInt(_pointValue);
+        }
+        _dealerTotal += getValue(_card);
+        
     }
+    dealerTotal += _dealerTotal;
+    playerTotal += _playerTotal;
+    
 }
-
 
 
 function createCard (rank, suit) {
@@ -48,6 +108,7 @@ function createCard (rank, suit) {
 
     return card;
 }
+
 function buildDeck () {
     const deck = [];
     const suits = ["hearts", "spades", "clubs", "diamonds"];
@@ -64,29 +125,19 @@ function buildDeck () {
     
 }
 
-const dealerhand = [];
-const playerhand = [];
+
 
 function stand () {
-    const dealerTotalHand = 0;
-    const playerTotalHand = 0;
-    const message = document.getElementById("messages"); 
-    console.log(dealerTotalHand);
-    playerHand.array.forEach(pointValue => {
-        playerTotalHand += pointValue
-    });
-    dealerHand.array.forEach(pointValue => {
-        dealerTotalHand += pointValue
-    });
-    
-    if (playerTotalHand === 21 || playerTotalHand > dealerTotalHand) {
+       if (playerTotal <= 21 && playerTotal > dealerTotal || playerTotal < dealerTotal && dealerTotal > 21) {
         message.innerText = "You Win!";
-    } else if (playerTotalHand < dealerTotalHand || playerTotalHand > 21) {
-        message.innerText = "You Lose!";
-    } else if (playerTotalHand === dealerTotalHand) {
+       } else if (playerTotal < dealerTotal && dealerTotal < 21 || playerTotal > 21) {
+        message.innerText = "You Lose";
+       } else if (playerTotal === dealerTotal) {
         message.innerText = "Draw!";
-    }
+       }
 }
+    
+
 
 standButn.addEventListener('click', stand);
 hitButn.addEventListener('click', hit);
