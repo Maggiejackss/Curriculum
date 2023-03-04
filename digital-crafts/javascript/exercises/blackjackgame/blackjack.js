@@ -10,8 +10,6 @@ const deck = buildDeck();
 // let playerTotalHand = 0;
 let dealerTotal = 0;
 let playerTotal = 0;
-let dealerhand = [];
-let playerhand = [];
 
 function deal () {
     let _dealerTotal = 0;

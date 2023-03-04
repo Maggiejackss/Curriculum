@@ -1,0 +1,33 @@
+html{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+body {
+    display: flex;
+    align-items: center;
+    background-color: rgba(39, 157, 245, 0.8);
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(39, 157, 245, 0.8);
+    flex-grow: 1;
+    row-gap: 5px;
+}
+
+img {
+    flex-grow: 1;
+}
+
+.bg {
+    background-color: rgba(39, 157, 245, 0.8);
+}
