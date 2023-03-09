@@ -1,58 +1,63 @@
 const dogButn = document.getElementById("dog-button");
 const body = document.getElementById('body');
 const header = document.getElementById('header');
+const imgs = document.getElementById('imgs');
+const dogPrompt = document.getElementById('dog-prompt');
+const Answer = document.getElementById('answer');
+const statusTracker = document.getElementById('status-tracker');
+
+let breeds = [];
+let answer = '';
 
 const dogPic = async () => {
     const response = await fetch('https://dog.ceo/api/breeds/image/random');
     const data = await response.json();
     const url = data.message;
-    return url;
+    const breedIndex = url.split('/')[4];
+    breeds.push(breedIndex);
+    return {breedIndex, url};
 }
 
 const dogPicButn = async () => {
-    const list = [];
-    const imgs = document.createElement('div');
-    // const bg = imgs.className("bg");
+    imgs.innerHTML = '';
     for (let i = 0; i <=3; i++){
-        //add innerHtml to wipe current pics
-        const dogPicUrl = dogPic();
+        const imgcont = document.createElement('div');
+        imgcont.className = `imgcont`;
+        const {breedIndex, url} = await dogPic();
         const dogpic = document.createElement('img');
-        dogpic.src = await dogPicUrl;
-        body.append(imgs);
-        imgs.append(dogpic);
-        list.push(dogPicUrl);
-        // imgs.className("bg");
+        dogpic.src = url;
+        dogpic.setAttribute('data-type', breedIndex);
+        dogpic.className = `img`;
+        imgs.append(imgcont);
+        imgcont.append(dogpic);
     }
-    console.log(list);
-    dogQ();
-    return list;
+    findBreedUrl();
 }
 
 const breedAnswer = e => {
-    let breed = dogQ;
-    const answer = document.createElement('div');
-    if (e.target.matches === `${breed}`) {
-        answer.innerText('Correct!');
-        header.append(answer);
+    const breed = e.target.getAttribute('data-type');
+    Answer.innerText = '';
+    if (breed === answer) {
+        Answer.append('Correct!');
+        statusTracker.append('You have answered')
     } else {
-        answer.innerText('Wrong!');
-        header.append(answer);
+        Answer.append('WRONG!');
     }
+
 }
 
-// const urlList = dogPicButn();
-
-const dogQ = async () => {
-    const urlList = dogPicButn();
+const findBreedUrl = async () => {
+    answer = breeds[Math.floor(Math.random() * breeds.length)];
     const prompt = document.createElement('div');
-    for (let i = 0; i <= 4; i++) {    
-        const dogPicBreeds = await urlList;
-        const findBreed = dogPicBreeds[Math.floor(Math.random() * dogPicBreeds.length)];
-        const breedIndex = findBreed.split('/');
-        const whichBreed = breedIndex[2];
-        prompt.innerText(`which image is ${whichBreed}`);
-        }
-    return prompt;
+    prompt.innerText = `Which dog is the ${answer}?`;
+    dogPrompt.append(prompt);
 }
 
-dogButn.addEventListener('click', dogQ);
+const trackAnswers = () => {
+    if (findBreedUrl === answer) {
+        console.log('continue');
+        }
+}
+
+dogButn.addEventListener('click', dogPicButn);
+imgs.addEventListener('click', breedAnswer);
