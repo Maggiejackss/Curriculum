@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: center; */
     background-color: rgba(39, 157, 245, 0.8);
     row-gap: 5px;
 }
@@ -28,16 +29,25 @@ img {
 
 .cont1 {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     column-gap: 30px;
+    margin: 0 auto;
+}
+
+.parentCont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .imgcont{
     border: 5px solid black;
-    object-fit: contain;
+    /* object-fit: contain; */
     display: flex;
     height: 250px;
     width: 250px;
-    flex-shrink: 1;
+    /* flex-shrink: 1; */
     justify-content: center;
     padding: 3px;
     margin: 3px;
