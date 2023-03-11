@@ -5,10 +5,13 @@ const imgs = document.getElementById('imgs');
 const dogPrompt = document.getElementById('dog-prompt');
 const Answer = document.getElementById('answer');
 const answerTracker = document.getElementById('answerTracker');
+const restartBtn = document.getElementById('restartBtn');
+restartBtn.className = "hidden";
 
 let breeds = [];
 let answer = '';
-let answerTrack = [];
+let points = [];
+
 
 const dogPic = async () => {
     const response = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -34,6 +37,9 @@ const dogPicButn = async () => {
         imgs.append(parentCont);
         parentCont.append(imgcont);
         imgcont.append(dogpic);
+    }
+    if (breeds.length > 3){
+        findBreedUrl();
     }
 }
 
@@ -62,17 +68,55 @@ const breedAnswer = e => {
     answerTracker.innerText = '';
     if (breed === answer) {
         Answer.append('Correct!');
-        answerTrack.push(1);
-        dogPicButn();
+        points.push(1);
+        breeds = [];
+        if (sumFunc() < 5) {
+            for (let i = 0; i <= 1; i++){
+                dogPicButn();
+            }
+        }
+        answerTrackerFunction();
     } else {
         Answer.append('WRONG! Try again!');
     }
-    console.log(answerTrack);
 }
 
 const answerTrackerFunction = () => {
-    
+    answerTracker.innerText = '';
+    answerTracker.innerText = `You have answered ${sumFunc()} out of 5 correctly!`;
+    if (sumFunc() === 5){
+        clearImages();
+        answerTracker.innerText = 'You have answered them all correctly!';
+        restartBtn.className = "displayed";
+        Answer.innerText = '';
+        dogPrompt.innerText = '';
+    }
 }
+
+const clearImages = () => {
+    imgs.innerHTML = '';
+    const placeHolder = document.createElement('img');
+    placeHolder.src ='https://images.dog.ceo/breeds/poodle-medium/PXL_20210220_100624962.jpg';
+    placeHolder.className = 'imgcont';
+    imgs.append(placeHolder);
+    dogButn.className = "hidden";
+}
+
+const restartBtnFnctn = () => {
+    Answer.innerText = '';
+    imgs.innerHTML = '';
+    dogPrompt.innerHTML = '';
+    answerTracker.innerText = '';
+    restartBtn.className = "hidden";
+}
+
+const sumFunc = () => {
+    const sum = points.reduce(function(a,b){
+        return a + b;
+    });
+    return sum;
+}
+// sum = sumFunc();
 
 // const findBreedUrl = async () => {
 //     dogPrompt.innerHTML = '';
@@ -87,3 +131,4 @@ const answerTrackerFunction = () => {
 
 dogButn.addEventListener('click', handleClick);
 imgs.addEventListener('click', breedAnswer);
+restartBtn.addEventListener('click', restartBtnFnctn);

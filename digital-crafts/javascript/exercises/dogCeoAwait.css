@@ -39,13 +39,14 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    column-gap: 30px;
 }
 
 .imgcont{
     border: 5px solid black;
     /* object-fit: contain; */
     display: flex;
-    height: 250px;
+    height: 350px;
     width: 250px;
     /* flex-shrink: 1; */
     justify-content: center;
@@ -55,4 +56,15 @@ img {
 
 .bg {
     background-color: rgba(39, 157, 245, 0.8);
+}
+
+.displayed {
+}
+
+.hidden {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
 }
