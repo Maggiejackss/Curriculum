@@ -42,17 +42,25 @@ img {
     column-gap: 30px;
 }
 
-.imgcont{
+.imgcont, .finalimgcont{
     border: 5px solid black;
     /* object-fit: contain; */
     display: flex;
-    height: 350px;
     width: 250px;
     /* flex-shrink: 1; */
     justify-content: center;
     padding: 3px;
     margin: 3px;
 }
+
+.imgcont{
+    height: 250px;
+}
+
+.finalimgcont{
+    height: 350px;
+}
+    
 
 .bg {
     background-color: rgba(39, 157, 245, 0.8);

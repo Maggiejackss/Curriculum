@@ -12,6 +12,12 @@ let breeds = [];
 let answer = '';
 let points = [];
 
+function onLoad() {
+    loadimg = document.createElement('img');
+    loadimg.src = 'https://twitter.com/reactjpg/status/1434745877294317571/photo/1';
+    imgs.append(loadimg);
+}
+
 
 const dogPic = async () => {
     const response = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -45,7 +51,6 @@ const dogPicButn = async () => {
 
 const findBreedUrl = async () => {
     dogPrompt.innerHTML = '';
-    // console.log(breeds);
     answer = await breeds[Math.floor(Math.random() * breeds.length)];
     console.log(answer);
     const prompt = document.createElement('div');
@@ -56,7 +61,6 @@ const findBreedUrl = async () => {
 const handleClick = () => {
     for (let i = 0; i <= 1; i++){
         dogPicButn();
-        // findBreedUrl();
     }
     console.log(breeds);
     findBreedUrl();
@@ -97,17 +101,19 @@ const clearImages = () => {
     imgs.innerHTML = '';
     const placeHolder = document.createElement('img');
     placeHolder.src ='https://images.dog.ceo/breeds/poodle-medium/PXL_20210220_100624962.jpg';
-    placeHolder.className = 'imgcont';
+    placeHolder.className = 'finalimgcont';
     imgs.append(placeHolder);
     dogButn.className = "hidden";
 }
 
 const restartBtnFnctn = () => {
+    dogButn.className = "";
     Answer.innerText = '';
     imgs.innerHTML = '';
     dogPrompt.innerHTML = '';
     answerTracker.innerText = '';
     restartBtn.className = "hidden";
+    points.length = 0;
 }
 
 const sumFunc = () => {
@@ -116,16 +122,6 @@ const sumFunc = () => {
     });
     return sum;
 }
-// sum = sumFunc();
-
-// const findBreedUrl = async () => {
-//     dogPrompt.innerHTML = '';
-//     answer = await breeds[Math.floor(Math.random() * breeds.length)];
-//     console.log(answer);
-//     const prompt = document.createElement('div');
-//     prompt.innerText = `Which dog is the ${answer}?`;
-//     dogPrompt.append(prompt);
-// }
 
 
 
