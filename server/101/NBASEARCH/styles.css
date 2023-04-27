@@ -1,0 +1,9 @@
+.output {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+html, body{
+  /* background-color: red; */
+}
