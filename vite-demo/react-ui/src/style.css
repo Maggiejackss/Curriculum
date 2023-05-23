@@ -86,3 +86,17 @@ ul {
 .breeds li.active {
   background-color: cornflowerblue;
 }
+
+.breeds-subheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breeds-subheader button {
+  background-color: cornsilk;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0 18px;
+
+}
