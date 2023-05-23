@@ -1,0 +1,22 @@
+[
+  {
+    "href": "/",
+    "id": 101,
+    "name": "Home"
+  },
+  {
+    "href": "/breeds",
+    "id": 102,
+    "name": "Breeds"
+  },
+  {
+    "href": "/favorites",
+    "id": 103,
+    "name": "Favorites"
+  },
+  {
+    "href": "/quiz",
+    "id": 104,
+    "name": "Quiz"
+  }
+]
