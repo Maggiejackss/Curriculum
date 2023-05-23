@@ -26,6 +26,11 @@ main {
 header {
   background-color: #ccc;
   padding: 30px 0;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
 }
 
 footer {
@@ -59,4 +64,25 @@ a {
 
 .navs a:last-of-type {
   margin-right: 0;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 5px;
+  justify-content: center;
+}
+
+.breeds li {
+  cursor: pointer;
+  padding: 20px 0;
+  background-color: aliceblue;
+  width: 160px;
+  text-align: center;
+}
+
+.breeds li.active {
+  background-color: cornflowerblue;
 }
