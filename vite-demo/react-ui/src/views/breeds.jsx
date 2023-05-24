@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectBreeds } from '../features/breedsSlice';
+import { addSelectedBreedsToStore, selectSelectedBreeds } from '../features/selectedBreeds';
+
 const Breeds = () => {
   const [ selectedBreeds, setSelectedBreeds ] = useState([])
-
+  const dispatch = useDispatch();
   const data = useSelector(selectBreeds);
-
-  const applyActiveClass = (breed) => {
-    if (selectedBreeds.indexOf(breed) > -1) {
-      return 'active';
-    }
-
-  }
 
   const handleClick = e => {
     const value = e.target.dataset.breed;
@@ -25,8 +20,9 @@ const Breeds = () => {
   }
 
   const handleSelectedBreeds = () => {
-    
-  }
+    dispatch(addSelectedBreedsToStore(selectedBreeds));
+    setSelectedBreeds([]);
+    }
 
   const breeds = data && data.map(breed => {
     return (
