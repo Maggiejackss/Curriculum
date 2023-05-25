@@ -7,10 +7,11 @@ const findAllBreeds = data => {
   for (let i = 0; i < breeds.length; i++) {
     if (data[breeds[i]].length > 0) {
       for (let j = 0; j < data[breeds[i]].length; j++) {
-        subbreeds.push(`${breeds[i]}-${data[breeds[i]][j]}`)
+        subbreeds.push(`${breeds[i]}/${data[breeds[i]][j]}`)
       }
     }
   }
+  console.log ([...breeds, ...subbreeds])
   return [...breeds, ...subbreeds];
 };
 

@@ -24,7 +24,7 @@ const Breeds = () => {
     setSelectedBreeds([]);
     }
 
-  const breeds = data && data.parentBreeds && data.parentBreeds.map(breed => {
+  const breeds = data && data.allBreeds && data.allBreeds.map(breed => {
     return (
     <li 
     className={selectedBreeds.indexOf(breed) > -1 ? 'active' : ''}
